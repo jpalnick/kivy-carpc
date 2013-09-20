@@ -50,6 +50,7 @@ if platform_system() == "Darwin":
 class VolumeWidget(Widget):
     def __init__(self, **kwargs):
         super(VolumeWidget, self).__init__(**kwargs)
+        
     
         
 
