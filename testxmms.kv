@@ -1,0 +1,74 @@
+#:kivy 1.7.1
+
+<MediaBar>:
+    title_label: title_label
+    artist_label: artist_label
+    album_label: album_label
+    playback_slider: playback_slider
+    prev_btn: prev_btn
+    play_btn: play_btn
+    next_btn: next_btn
+    cols: 2
+    rows: 1
+    size_hint: 1, None
+    height: 105
+    GridLayout:
+        cols: 1
+        Label:
+            id: title_label
+            text: "title"
+            bold: True
+            size_hint: 1, None
+            height: 25
+        Label:
+            id: artist_label
+            text: "Artist"
+            size_hint: 1, None
+            height: 25
+        Label:
+            id: album_label
+            text: "Album"
+            size_hint: 1, None
+            height: 25
+        BoxLayout:
+            size_hint: 1, None
+            height: 30
+            Label:
+                id: pos_label
+                text: root.time_str(playback_slider.value)
+                size_hint: None, 1
+                width: 50
+            Slider:
+                id: playback_slider
+                max: 0
+                value: 0
+            Label:
+                id: length_label
+                text: root.time_str(playback_slider.max)
+                size_hint: None, 1
+                width: 50
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'bottom'
+        padding: 5
+        size_hint: None, 1
+        width: 100
+        GridLayout:
+            cols: 2
+            rows: 2
+            Button:
+                id: prev_btn
+                text: "Waiting"
+                size_hint: 0.5, None
+                height: 50
+            Button:
+                id: next_btn
+                text: "Waiting"
+                size_hint: 0.5, None
+                height: 50
+            Button:
+                id: play_btn
+                text: "Waiting"
+                size_hint: 0.5, None
+                height: 50
+
